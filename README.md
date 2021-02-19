@@ -1,5 +1,4 @@
 # FUD-ShellCode-UUID #
-## Making shellcode FUD ##
 -------------
 ### Before: ###
 ![alt text](https://github.com/whydee86/FUD_Malware_Dev/blob/main/MalwareTest/Umv5YbJDEvSG.png?raw=true)
